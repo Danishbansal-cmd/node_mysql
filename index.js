@@ -15,6 +15,7 @@ const connection = mysql.createConnection({
 // })
 
 app.get('/mysqlData',(res, req, next) => {
+    let data;
     connection.query("select  Host,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv,Drop_priv,Reload_priv,Shutdown_priv,Process_priv from mysql.user;", (error, result, fields) => {
         if(error) throw error;
         console.log("result")
@@ -24,9 +25,11 @@ app.get('/mysqlData',(res, req, next) => {
         //     text += "<tr><td>" + result[i]['RowDataPacket']['host'] + "</td></tr><td><tr>" + result[i]['RowDataPacket']['user'] + "</td></tr>"
         // }
         text += "</table>"
-        res.send(result[0]['RowDataPacket'])
+        data = result[0]
+        
         // res.send(text)
     })
+    res.send(data['RowDataPacket'])
 })
 
 const port_number = process.env.PORT || 3000
