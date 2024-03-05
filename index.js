@@ -34,7 +34,7 @@ app.get('/mysqlData',(req, res, next) => {
         data = result[0]
         
         // res.send(text)
-        res.render('./views/data-list', { title: 'data List', userData: data });
+        res.render('data-list.ejs', { title: 'data List', userData: data });
     })
     // res.send(data)
 })
