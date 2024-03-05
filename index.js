@@ -33,8 +33,8 @@ app.get('/mysqlData',(req, res, next) => {
         text += "</table>"
         data = result[0]
         
-        res.send(text)
-        // res.render('data-list.ejs', { title: 'data List', userData: result[0] });
+        // res.send(text)
+        res.render('data-list.ejs', { title: 'data List', userData: result });
     })
     // res.send(data)
 })
