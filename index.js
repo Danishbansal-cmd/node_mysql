@@ -9,10 +9,10 @@ const connection = mysql.createConnection({
     database: 'mysql'
 })
 
-// connection.connect( (error) => {
-//     if (error) throw error;
-//     console.log("successfully connected")
-// })
+connection.connect( (error) => {
+    if (error) throw error;
+    console.log("successfully connected")
+})
 
 app.get('/mysqlData',(res, req, next) => {
     let data;
