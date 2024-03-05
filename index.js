@@ -24,7 +24,8 @@ app.get('/mysqlData',(res, req, next) => {
             text += "<tr><td>" + result[i]['RowDataPacket']['host'] + "</td></tr><td><tr>" + result[i]['RowDataPacket']['user'] + "</td></tr>"
         }
         text += "</table>"
-        res.send(text)
+        res.send(result[i]['RowDataPacket']['host'] + "</td></tr><td><tr>" + result[0]['RowDataPacket'])
+        // res.send(text)
     })
 })
 
