@@ -20,7 +20,7 @@ connection.connect( (error) => {
     console.log("successfully connected")
 })
 
-app.get('/mysqlData',(res, req, next) => {
+app.get('/mysqlData',(req, res, next) => {
     let data;
     connection.query("select  Host,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv,Drop_priv,Reload_priv,Shutdown_priv,Process_priv from mysql.user;", (error, result, fields) => {
         if(error) throw error;
