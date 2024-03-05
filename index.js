@@ -21,7 +21,7 @@ app.get('/mysqlData',(res, req, next) => {
         console.log(result)
         let text = "<table style='1px solid black;'><tr><th>Host</th><th>User</th></tr>";
         for(let i = 0; i < result.length; i++){
-            text += "<tr><td>" + result[i]['RowDataPacket']['Host'] + "</td></tr><td><tr>" + result[i]['RowDataPacket']['User'] + "</td></tr>"
+            text += "<tr><td>" + result[i]['RowDataPacket']['host'] + "</td></tr><td><tr>" + result[i]['RowDataPacket']['user'] + "</td></tr>"
         }
         text += "</table>"
         res.send(text)
