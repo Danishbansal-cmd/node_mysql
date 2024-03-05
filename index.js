@@ -27,13 +27,13 @@ app.get('/mysqlData',(req, res, next) => {
         console.log("result")
         console.log(result)
         let text = "<table style='1px solid black;'><tr><th>Host</th><th>User</th></tr>";
-        // for(let i = 0; i < result.length; i++){
-        //     text += "<tr><td>" + result[i]['RowDataPacket']['host'] + "</td></tr><td><tr>" + result[i]['RowDataPacket']['user'] + "</td></tr>"
-        // }
+        for(let i = 0; i < result.length; i++){
+            text += "<tr><td>" + result[i]['Host'] + "</td></tr><td><tr>" + result[i]['User'] + "</td></tr>"
+        }
         text += "</table>"
         data = result[0]
         
-        res.send(result[0])
+        res.send(text)
         // res.render('data-list.ejs', { title: 'data List', userData: result[0] });
     })
     // res.send(data)
