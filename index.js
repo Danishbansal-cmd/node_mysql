@@ -24,8 +24,8 @@ app.get('/mysqlData',(res, req, next) => {
 
 const port_number = process.env.PORT || 3000
 
-app.get('/',(res, req, next) => {
-    res.send("hi this is response page")
+app.get('/',(res, req) => {
+    res.send('GET request to the homepage')
 })
 
 app.listen(port_number, () => {
