@@ -29,7 +29,7 @@ app.get('/mysqlData',(res, req, next) => {
         
         // res.send(text)
     })
-    res.send(data['RowDataPacket'])
+    res.send(data)
 })
 
 const port_number = process.env.PORT || 3000
