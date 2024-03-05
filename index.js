@@ -33,10 +33,10 @@ app.get('/mysqlData',(req, res, next) => {
         text += "</table>"
         data = result[0]
         
-        res.send(text)
+        res.send(result[0])
         // res.render('data-list.ejs', { title: 'data List', userData: result[0] });
     })
-    res.send(data)
+    // res.send(data)
 })
 
 const port_number = process.env.PORT || 3000
